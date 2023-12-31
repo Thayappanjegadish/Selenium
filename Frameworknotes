@@ -1,0 +1,124 @@
+TEST NG :
+
+It is a java testing framework .The goal of testng is to cover wide range of test categories
+
+Testcases can be executed with the help of testng instead of running every java class using main method
+
+TESTNG xml file :
+It is a configuration file that is used to organize test 
+It makes a tester's job easier by controlling the execution of tests by putting all the test cases together and run it under one XML file.
+
+PRIORATIZING TESTCASES :
+
+SUITE NAME -> TEST NAME -> CLASS NAME
+
+XML hierarchy :
+Test suite -> Test folder -> Test cases
+
+
+There can be multiple suites inside an xml file 
+
+1)INCLUDE AND EXCLUDE MECHANISM :
+
+It is a process of including or excluding the methods present inside the class on our needs
+Using this we can get a control on running specific methods inside the classes
+
+If we are running some 100 regression test cases then we can remove the unwanted test cases using this mechanism
+
+To EXCLUDE a particular method just give the below syntax
+
+Test -> classes -> class-> methods -> exclude.
+
+   
+To INCLUDE only a particular method just give the below syntax
+   
+Test -> classes -> methods-> include.
+
+
+2)Executing the testcases at the package level with regex.
+In Automation frameworks naming conventions are important and must be followed we should give a common name at starting to all methods depending on the module
+
+SCENARIO :
+If there are three functionalities are there but we want to run only selected testcases then
+
+Inside the methods name tag just give a dot followed by * methodstartingname
+
+3)Executing all the testcases inside the package
+
+Create a new testng xml file:
+Packages -> package name 
+
+
+
+4)TestNG annotations:
+
+@BeforeSuite : @BS annotated method will run before the execution of all the test methods in suite .
+
+@AfterSuite : @AS annotated method will run after the execution of all the test methods in suite .
+
+@BeforeTest : @Bt annotated method will run before the execution of all the test methods in the classes belonging to the folder.
+
+@AfterTest  : @At annotated method will run after the execution of all the test methods in the classes belonging to the folder.
+
+@BeforeClass : @Bc annotated method will run before the execution of methods present in classes.
+
+@AfterClass : @Ac annotated method will run after the execution of methods present in the classes.
+
+@BeforeMethod : @BM annotated method will run before the execution of every test method .
+
+@AfterMethod : @AM annotated method will run after the execution of every test method .
+
+@BeforeGroups : @BG annotated method will run before the execution of every groups .
+
+@AfteGroups : @AG annotated method will run after the execution of every groups.
+
+
+5)USAGE OF GROUPS FUNCTIONALITY IN TESTNG :
+
+This is used to group some testcases by giving an unique tag name .
+SCENARIO : If we want to run smoke test cases alone 
+
+Give a tagname of "smoke" 
+
+Eg : @test(groups = {"smoke"}) -> Give this above the method name
+
+In xml file follow this syntax :
+
+groups -> run -> include -> tagname
+
+6)PARAMETERIZING TESTCASES :
+
+In xml file give the <parameter name="URL" value="qaclickacademy.com"/>
+
+Parameter name and value in class file enter @parameter tag name above the method pass a string as a parameter inside a method
+
+
+7)TESTNG LISTENERS :
+TestNG provides @Listeners annotations which listens to every event that occurs in selenium code . It is activated either before or after the testcase
+
+Listeners are implemented by the ITestListener interface. An ITestListener interface has the following methods:
+
+onTestStart(): An onTestStart() is invoked only when any test method gets started.
+
+onTestSuccess(): An onTestSuccess() method is executed on the success of a test method.
+
+onTestFailure(): An onTestFailure() method is invoked when test method fails.
+
+onTestSkipped(): An onTestSkipped() run only when any test method has been skipped.
+
+onTestFailedButWithinSuccessPercentage(): This method is invoked each time when the test method fails but within success percentage.
+
+onStart(): An onStart() method is executed on the start of any test method.
+
+onFinish(): An onFinish() is invoked when any test case finishes its execution.
+
+
+
+
+
+
+   
+   
+   
+
+
